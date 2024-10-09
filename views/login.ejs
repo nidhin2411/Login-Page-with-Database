@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Application</title>
+    <link rel="stylesheet" href="/style.css">
+    
+
+    <!-- Bootstrap CSS -->
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+    <div class="container" id="container">
+        <div class="form-container sign-up-container">
+          <form action="/signup" method="post">
+            <h1>Create Account</h1>
+            <input type="text" name="username" placeholder="Name" required />
+            <input type="email" name="email" placeholder="Email" required />
+            <input type="password" name="password" placeholder="Password" required/>
+            <br>
+            <button type="submit" value="Submit" class="button2">Sign Up</button>
+            <br>
+            <button type="reset" value="Reset" class="button2">Reset</button>
+           
+          </form>
+        </div>
+        <div class="form-container sign-in-container">
+          <form action="/login" method="post">
+            <h1>Log in</h1>
+            
+            <input type="email" placeholder="Email"  name="email"/>
+            <input type="password" placeholder="Password" name="userPassword" />
+            <br>
+            <button type="submit" value="Submit" class="button2">Log In</button>
+                   
+          </form>
+        </div>
+        <div class="overlay-container">
+          <div class="overlay">
+            <div class="overlay-panel overlay-left">
+              <h1>Welcome Back!</h1>
+              <p>To stay connected with us please login with your personal info</p>
+              <button class="btn" id="signIn"></i>Log In</button>
+
+            </div>
+            <div class="overlay-panel overlay-right">
+              <h1>Hello, Friend!</h1>
+              <p>Enter your personal details and start your journey with us</p>
+              <button class="btn" id="signUp">Sign Up</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+
+<script>
+  const urlParams=new URLSearchParams(window.location.search);
+  const signupError=urlParams.get('signupError');
+  const signupSuccess=urlParams.get('signupSuccess')
+  const loginError=urlParams.get('loginError')
+
+
+  if(urlParams.get('signupSuccess')){
+    alert('Sign-up successful.....!!')
+  }
+
+  if(signupError){
+    alert('Sign-up Error'+signupError)
+
+  }
+
+  if(loginError){
+    alert("Login error"+loginError)
+  }
+
+
+
+</script>
+
+
+<script src="/style.js"></script>
+      <!-- jQuery (Bootstrap requires jQuery) -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+
+<!-- Popper.js (required for Bootstrap's JavaScript plugins) -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+
+<!-- Bootstrap JS -->
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>
